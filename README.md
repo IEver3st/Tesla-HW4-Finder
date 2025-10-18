@@ -16,17 +16,13 @@ A Chrome extension that automatically detects Tesla VINs on popular car websites
 
 1. **Download/Clone** this repository to your local machine
 
-2. **Install ImageMagick** (optional, for better icons):
-   - Download from: https://imagemagick.org/
-   - Run `.\create_icons.ps1` to generate proper PNG icons from the SVG
-
-3. **Load in Chrome**:
+2. **Load in Chrome**:
    - Open Chrome and go to `chrome://extensions/`
    - Enable "Developer mode" (toggle in top right)
    - Click "Load unpacked"
    - Select the folder containing this extension
 
-4. **Grant Permissions** when prompted
+3. **Grant Permissions** when prompted
 
 ## Usage
 
@@ -55,8 +51,6 @@ A Chrome extension that automatically detects Tesla VINs on popular car websites
 - `content.js` - Page scanning logic
 - `popup.html/popup.js` - Extension popup UI
 - `background.js` - Badge management
-- `icons/` - Extension icons
-- `create_icons.ps1` - Icon generation script
 
 ## Privacy
 
@@ -75,3 +69,4 @@ This extension only:
 ## Contributing
 
 Feel free to submit issues or pull requests to improve VIN detection or add support for more websites.
+
