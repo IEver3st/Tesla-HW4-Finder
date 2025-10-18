@@ -1,0 +1,46 @@
+{
+  "manifest_version": 3,
+  "name": "HW4 Tesla VIN Checker",
+  "version": "1.0",
+  "description": "Detects Tesla VINs on car websites and checks for HW4 compatibility",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "host_permissions": [
+    "*://*.cars.com/*",
+    "*://*.autotrader.com/*",
+    "*://*.cargurus.com/*",
+    "*://*.carfax.com/*",
+    "*://*.edmunds.com/*",
+    "*://*.kbb.com/*",
+    "file:///*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.cars.com/*",
+        "*://*.autotrader.com/*",
+        "*://*.cargurus.com/*",
+        "*://*.carfax.com/*",
+        "*://*.edmunds.com/*",
+        "*://*.kbb.com/*",
+        "file:///*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "HW4 Status"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

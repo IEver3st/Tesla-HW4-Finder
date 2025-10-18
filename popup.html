@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      width: 320px;
+      min-height: 200px;
+      margin: 0;
+      padding: 16px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 16px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .title {
+      font-size: 18px;
+      font-weight: bold;
+      margin: 0;
+      color: white;
+    }
+
+    .status {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      border-radius: 8px;
+      margin: 12px 0;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .status.hw4-yes {
+      background: rgba(0, 255, 0, 0.2);
+      border: 2px solid #00FF00;
+      color: #00FF00;
+    }
+
+    .status.hw4-no {
+      background: rgba(255, 0, 0, 0.2);
+      border: 2px solid #FF4444;
+      color: #FF4444;
+    }
+
+    .status.hw4-unknown {
+      background: rgba(255, 165, 0, 0.2);
+      border: 2px solid #FFA500;
+      color: #FFA500;
+    }
+
+    .vin-list {
+      margin-top: 16px;
+    }
+
+    .vin-item {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 6px;
+      padding: 8px 12px;
+      margin: 6px 0;
+      font-size: 12px;
+      border-left: 3px solid #667eea;
+    }
+
+    .vin-item.hw4-yes {
+      border-left-color: #00FF00;
+    }
+
+    .vin-item.hw4-no {
+      border-left-color: #FF4444;
+    }
+
+    .rules {
+      margin-top: 16px;
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.4;
+    }
+
+    .rules-title {
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .rules-list {
+      margin: 0;
+      padding-left: 16px;
+    }
+
+    .rules-list li {
+      margin: 4px 0;
+    }
+
+    .last-scan {
+      font-size: 10px;
+      color: rgba(255, 255, 255, 0.6);
+      text-align: center;
+      margin-top: 12px;
+      padding-top: 8px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .no-vins {
+      text-align: center;
+      padding: 20px;
+      color: rgba(255, 255, 255, 0.7);
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1 class="title">🚗 HW4 Tesla VIN Checker</h1>
+    </div>
+
+    <div id="status" class="status hw4-unknown">
+      🔍 Scanning for VINs...
+    </div>
+
+    <div id="vin-list" class="vin-list" style="display: none;">
+      <!-- VIN details will be inserted here -->
+    </div>
+
+    <div id="no-vins" class="no-vins" style="display: none;">
+      No Tesla VINs found on this page
+    </div>
+
+    <div class="rules">
+      <div class="rules-title">HW4 Detection Rules:</div>
+      <ul class="rules-list">
+        <li><strong>Fremont (PF):</strong> Sequential ≥789500</li>
+        <li><strong>Austin (PA):</strong> Sequential ≥131200</li>
+        <li><strong>Model Y 2024+:</strong> Always HW4</li>
+      </ul>
+    </div>
+
+    <div id="last-scan" class="last-scan">
+      <!-- Last scan time will be inserted here -->
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
